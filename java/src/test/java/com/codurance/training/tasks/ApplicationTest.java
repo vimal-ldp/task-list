@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.io.PrintWriter;
+
+import com.codurance.training.tasks.service.MenuService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,8 +29,8 @@ public final class ApplicationTest {
     public ApplicationTest() throws IOException {
         BufferedReader in = new BufferedReader(new InputStreamReader(new PipedInputStream(inStream)));
         PrintWriter out = new PrintWriter(new PipedOutputStream(outStream), true);
-        TaskList taskList = new TaskList(in, out);
-        applicationThread = new Thread(taskList);
+        MenuService menuService=new MenuService();
+        applicationThread = new Thread((Runnable) menuService);
     }
 
     @Before public void

@@ -33,7 +33,6 @@ public class TaskServiceImpl implements TaskListService {
     }
 
     public void addProject(Map<String, List<Task>> tasks,String name) {
-
         tasks.put(name, new ArrayList<Task>());
     }
 
