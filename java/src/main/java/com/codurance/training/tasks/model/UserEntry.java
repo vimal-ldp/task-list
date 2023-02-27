@@ -1,4 +1,4 @@
-package com.codurance.training.tasks.service;
+package com.codurance.training.tasks.model;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

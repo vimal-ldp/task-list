@@ -7,7 +7,7 @@ import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.io.PrintWriter;
 
-import com.codurance.training.tasks.service.MenuService;
+import com.codurance.training.tasks.processor.MenuService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,9 +17,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 public final class ApplicationTest {
-    public static final String PROMPT = "> ";
+    public static final String PROMPT = "\n 1: Light(s) ON \n 2: Light(s) OFF \n 3: Light(s) Toggle \n 4: Exit  ";
     private final PipedOutputStream inStream = new PipedOutputStream();
     private final PrintWriter inWriter = new PrintWriter(inStream, true);
+
 
     private final PipedInputStream outStream = new PipedInputStream();
     private final BufferedReader outReader = new BufferedReader(new InputStreamReader(outStream));
