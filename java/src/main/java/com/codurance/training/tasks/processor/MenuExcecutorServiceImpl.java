@@ -9,18 +9,18 @@ import com.codurance.training.tasks.service.TaskUtilityServiceImpl;
 import java.util.List;
 import java.util.Map;
 
-public class MenuExcecutor  {
+public class MenuExcecutorServiceImpl implements MenuExcecuterService {
 
-    TaskMenuService taskMenuService;
-    TaskUtilityService utilityService;
+    private final TaskMenuService taskMenuService;
+    private final TaskUtilityService utilityService;
 
-    public MenuExcecutor() {
+    public MenuExcecutorServiceImpl() {
 
         this.taskMenuService =  new TaskMenuServiceImpl();
         this.utilityService= new TaskUtilityServiceImpl();
     }
 
-    void execute(String commandLine, Map<String, List<Task>> tasks) {
+    public void execute(String commandLine, Map<String, List<Task>> tasks) {
         String[] commandRest = commandLine.split(" ", 2);
         String command = commandRest[0];
         switch (command) {

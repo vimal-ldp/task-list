@@ -15,11 +15,11 @@ public class MenuService implements Runnable{
     private final Map<String, List<Task>> tasks = new LinkedHashMap<>();
     private final UserEntry user;
 
-    private final MenuExcecutor excecutor;
+    private final MenuExcecuterService excecutor;
 
     public MenuService() {
         this.user = new UserEntry();
-        excecutor =new MenuExcecutor();
+        excecutor =new MenuExcecutorServiceImpl();
     }
 
     @Override
