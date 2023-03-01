@@ -1,4 +1,4 @@
-package com.codurance.training.tasks;
+package com.codurance.training.tasks.model;
 
 public final class Task {
     private final long id;
@@ -25,5 +25,14 @@ public final class Task {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", done=" + done +
+                '}';
     }
 }
